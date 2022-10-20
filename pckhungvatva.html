@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="li">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/product-item.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="fontawesome_free_5.13.0/css/all.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+
+<body>
+    <!-- code cho nut like share facebook  -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
+
+    <!-- header -->
+    <nav class="navbar navbar-expand-md bg-white navbar-light">
+        <div class="container">
+            <!-- logo  -->
+            <a class="navbar-brand" href="index.html" style="color: #CF111A;"><img src="images/logo-hacom.png"
+                    alt=""></a>
+
+            <!-- navbar-toggler  -->
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <!-- form tìm kiếm  -->
+                <form class="form-inline ml-auto my-2 my-lg-0 mr-3">
+                    <div class="input-group" style="width: 520px;">
+                        <input type="text" class="form-control" aria-label="Small"
+                            placeholder="Nhập sách cần tìm kiếm...">
+                        <div class="input-group-append">
+                            <button type="button" class="btn" style="background-color: #CF111A; color: white;">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- ô đăng nhập đăng ký giỏ hàng trên header  -->
+                <ul class="navbar-nav mb-1 ml-auto">
+                    <div class="dropdown">
+                        <li class="nav-item account" type="button" class="btn dropdown" data-toggle="dropdown">
+                            <a href="#" class="btn btn-secondary rounded-circle">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link text-dark text-uppercase" href="#" style="display:inline-block">Tài
+                                khoản</a>
+                        </li>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item nutdangky text-center mb-2" href="#" data-toggle="modal"
+                                data-target="#formdangky">Đăng ký</a>
+                            <a class="dropdown-item nutdangnhap text-center" href="#" data-toggle="modal"
+                                data-target="#formdangnhap">Đăng nhập</a>
+                        </div>
+                    </div>
+                    <li class="nav-item giohang">
+                        <a href="gio-hang.html" class="btn btn-secondary rounded-circle">
+                            <i class="fa fa-shopping-cart"></i>
+                            <div class="cart-amount">0</div>
+                        </a>
+                        <a class="nav-link text-dark giohang text-uppercase" href="gio-hang.html"
+                            style="display:inline-block">Giỏ
+                            Hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- form dang ky khi click vao button tren header-->
+    <div class="modal fade mt-5" id="formdangky" data-backdrop="static" tabindex="-1" aria-labelledby="dangky_tieude"
+        aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+                        <li class="tab tab-dangnhap text-center">
+                            <a class=" text-decoration-none">Đăng nhập</a>
+                            <hr>
+                        </li>
+                        <li class="tab tab-dangky text-center">
+                            <a class="text-decoration-none">Đăng ký</a>
+                            <hr>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup" class="form-signin mt-2">
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" placeholder="Nhập họ và tên" name="name" required
+                                autofocus>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="phone"
+                                required>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email"
+                                required>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password"
+                                required>
+                        </div>
+                        <div class="form-label-group mb-4">
+                            <input type="password" class="form-control" name="confirm_password"
+                                placeholder="Nhập lại mật khẩu" required>
+                        </div>
+                        <button class="btn btn-lg btn-block btn-signin text-uppercase text-white mt-3" type="submit"
+                            style="background: #F5A623">Đăng ký</button>
+                        <hr class="mt-3 mb-2">
+                        <div class="custom-control custom-checkbox">
+                            <p class="text-center">Bằng việc đăng ký, bạn đã đồng ý với HACOM về</p>
+                            <a href="#" class="text-decoration-none text-center" style="color: #F5A623">Điều khoản dịch
+                                vụ & Chính sách bảo mật</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- form dang nhap khi click vao button tren header-->
+    <div class="modal fade mt-5" id="formdangnhap" data-backdrop="static" tabindex="-1"
+        aria-labelledby="dangnhap_tieude" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+                        <li class="tab tab-dangnhap text-center">
+                            <a class=" text-decoration-none">Đăng nhập</a>
+                            <hr>
+                        </li>
+                        <li class="tab tab-dangky text-center">
+                            <a class="text-decoration-none">Đăng ký</a>
+                            <hr>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signin" class="form-signin mt-2">
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email"
+                                required autofocus>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" name="password" required>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+                            <a href="#" class="float-right text-decoration-none" style="color: #F5A623">Quên mật
+                                khẩu</a>
+                        </div>
+
+                        <button class="btn btn-lg btn-block btn-signin text-uppercase text-white" type="submit"
+                            style="background: #F5A623">Đăng nhập</button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                class="fab fa-google mr-2"></i> Đăng nhập bằng Google</button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                class="fab fa-facebook-f mr-2"></i> Đăng nhập bằng Facebook</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- thanh "danh muc sach" đã được ẩn bên trong + hotline + ho tro truc tuyen -->
+    <section class="duoinavbar">
+        <div class="container text-white">
+            <div class="row justify">
+                <div class="col-lg-3 col-md-5">
+                    <div class="categoryheader">
+                        <div class="noidungheader text-white">
+                            <i class="fa fa-bars"></i>
+                            <span class="text-uppercase font-weight-bold ml-1">Danh mục sản phẩm</span>
+                        </div>
+                        <!-- CATEGORIES -->
+                        <div class="categorycontent">
+                            <ul>
+                                <li> <a href="sach-kinh-te.html"> Laptop, Tablet, Mobile</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Laptop, Tablet,
+                                                Mobile</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Laptop Acer</a></li>
+                                            <li><a href="#">Laptop Asus</a></li>
+                                            <li><a href="#">Laptop Alentware</a></li>
+                                            <li><a href="#">Laptop dell</a></li>
+                                            <li><a href="#">Laptop MSI</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Laptop theo nhu cầu</a></li>
+                                            <li><a href="#">Laptop Gaming</a></li>
+                                            <li><a href="#">Laptop đồ họa kiến trúc</a></li>
+                                            <li><a href="#">Phổ thông, Văn phòng</a></li>
+                                            <li><a href="#">Mỏng nhẹ, Thời trang</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Phụ kiện Laptop, Pc, Mobile</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Phụ kiện Laptop,
+                                                Pc,
+                                                Mobile</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Cáp HDMT</a></li>
+                                            <li><a href="#">Cap VGA</a></li>
+                                            <li><a href="#">Cáp Displayport</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Thiết bị chuyển đổi</a></li>
+                                            <li><a href="#">Từ USB sang các loại</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PC Gaming, Streaming</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">PC Gaming,
+                                                Streaming</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">PC Gaming trung cấp</a></li>
+                                            <li><a href="#">PC Gaming cao cấp</a></li>
+                                            <li><a href="#">Máy tính chơi game Hãng</a></li>
+                                            <li><a href="#">Máy tính chơi game ASUS</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Gói lắp đặt tản nhiệt nước</a></li>
+                                            <li><a href="#">Máy tính GeFcore eSport</a></li>
+                                            <li><a href="#">Máy tính chơi game MSI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PC Đồ Họa, Render, Máy Chủ</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">PC Thiết kế đồ
+                                                họa</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Linh kiện Server, WS</a></li>
+                                            <li><a href="#">PC dựng phim, Editor</a></li>
+                                            <li><a href="#">PC vẽ dựng cad, kiến trúc</a></li>
+                                            <li><a href="#">Thần Thoại - Cổ Tích</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Máy chủ hãng</a></li>
+                                            <li><a href="#">Workstation hãng</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Linh kiện máy tính</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Sách Thiếu
+                                                Nhi</a>
+                                        </li>
+                                        <div class="content trai">
+                                            <li><a href="#">CPU - Bộ vi xử lý</a></li>
+                                            <li><a href="#">CPU Intel</a></li>
+                                            <li><a href="#">CPU AMD</a></li>
+                                            <li><a href="#">CPU theo socket</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Mainboard - Bo mạch chủ</a></li>
+                                            <li><a href="#">Mainboard Intel</a></li>
+                                            <li><a href="#">Mainboard AMD</a></li>
+                                            <li><a href="#">Mainboard theo hãng</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Tản nhiệt PC, Cooling</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Tản nhiệt khí cho
+                                                PC</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Quạt tản nhiệt</a></li>
+                                            <li><a href="#">Tản nhiệt Ram</a></li>
+                                            <li><a href="#">Tản nhiệt HDD</a></li>
+                                            <li><a href="#">Tản nhiệt khí cho CPU</a></li>
+                                            <li><a href="#">Đèn LED</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Tản nhiệt nước ALL in One</a></li>
+                                            <li><a href="#">Hãng sản xuất</a></li>
+                                            <li><a href="#">Kích cỡ quạt</a></li>
+                                            <li><a href="#">Tản nhiệt LED RGB</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Màn hình máy tính</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Màn hình theo
+                                                khoảng
+                                                giá</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Dưới 2 triệu</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">2 triệu - 3 triệu</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Phím chuột, Ghế Game, Gear</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Bàn Phím</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Bàn Phím cơ</a></li>
+                                            <li><a href="#">BÀn phím Gaming</a></li>
+                                            <li><a href="#">Bàn phím phổ thông</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Chuột</a></li>
+                                            <li><a href="#">Chuột Gaming</a></li>
+                                            <li><a href="#">Chuột không giây</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Máy chơi Game, Tay Game</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Máy chơi game</a>
+                                        </li>
+                                        <div class="content trai">
+                                            <li><a href="#">Máy chơi game PS4</a></li>
+                                            <li><a href="#">Máy chơi game PS5</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Tay cầm chơi game PS4</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Loa, tai nghe, Webcam</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase"></a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="#">Camera Quan sát</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Camera quan
+                                                sát</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 ml-auto contact d-none d-md-block">
+                    <div class="benphai float-right">
+                        <div class="hotline">
+                            <i class="fa fa-phone"></i>
+                            <span>Hotline:<b>1900 1999</b> </span>
+                        </div>
+                        <i class="fas fa-comments-dollar"></i>
+                        <a href="#">Hỗ trợ trực tuyến </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- breadcrumb  -->
+    <section class="breadcrumbbar">
+        <div class="container">
+            <ol class="breadcrumb mb-0 p-0 bg-transparent">
+                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="#">Sản phẩm 1</a></li>
+                <li class="breadcrumb-item active"><a href="#">PC Khủng</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- nội dung của trang  -->
+    <section class="product-page mb-4">
+        <div class="container">
+            <!-- chi tiết 1 sản phẩm -->
+            <div class="product-detail bg-white p-4">
+                <div class="row">
+                    <!-- ảnh  -->
+                    <div class="col-md-5 khoianh">
+                        <div class="anhto mb-4">
+                            <a class="active" href="images/sp1.jpg" data-fancybox="thumb-img">
+                                <img class="product-image" src="images/sp1.jpg"
+                                    alt="pckhungvatva" style="width: 100%;">
+                            </a>
+                            <a href="images/sp_1.1.jpg" data-fancybox="thumb-img"></a>
+                        </div>
+                        <div class="list-anhchitiet d-flex mb-4" style="margin-left: 2rem;">
+                            <img class="thumb-img thumb1 mr-3" src="images/sp1.jpg" class="img-fluid"
+                                alt="pckhungvatva">
+                            <img class="thumb-img thumb2" src="images/sp_1.1.jpg" class="img-fluid" alt="pckhungvatva">
+                        </div>
+                    </div>
+                    <div class="col-md-7 khoithongtin">
+                        <div class="row">
+                            <div class="col-md-12 header">
+                                <h4 class="ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX
+                                    3050/550W)</h4>
+                                <div class="rate">
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star "></i>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="gia">
+                                    <div class="giabia">Giá gốc:<span class="giacu ml-2">27.390.000 ₫</span></div>
+                                    <div class="giaban">Giá bán tại Shop: <span
+                                            class="giamoi font-weight-bold">24.399.000</span>
+                                            <span
+                                            class="donvitien">₫</span></div>
+                                    <div class="tietkiem">Tiết kiệm: <b>5.478.000₫</b> <span class="sale">-20%</span>
+                                    </div>
+                                </div>
+                                <div class="uudai my-3">
+                                    <h6 class="header font-weight-bold">Khuyến mãi & Ưu đãi tại HanoiComputer:</h6>
+                                    <ul>
+                                        <li><b>Miễn phí giao hàng </b>cho đơn hàng từ 1.000.000đ ở TP.HCM và 3.000.000đ
+                                            ở
+                                            Tỉnh/Thành khác <a href="#">>> Chi tiết</a></li>
+                                        <li><b>Combo Gear HOT - GIẢM 25% </b><a href="#">>>Xem ngay</a></li>
+                                        <li>Tặng Phụ kiện kèm cho mỗi đơn hàng</li>
+
+                                    </ul>
+                                </div>
+                                <div class="soluong d-flex">
+                                    <label class="font-weight-bold">Số lượng: </label>
+                                    <div class="input-number input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text btn-spin btn-dec">-</span>
+                                        </div>
+                                        <input type="text" value="1" class="soluongsp  text-center">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text btn-spin btn-inc">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nutmua btn w-100 text-uppercase">Chọn mua</div>
+                                <a class="huongdanmuahang text-decoration-none" href="#">(Vui lòng xem hướng dẫn mua
+                                    hàng)</a>
+                                <small class="share">Share: </small>
+                                <div class="fb-like" data-href="https://www.facebook.com/DealBook-110745443947730/"
+                                    data-width="300px" data-layout="button" data-action="like" data-size="small"
+                                    data-share="true"></div>
+                            </div>
+                            <!-- thông tin khác của sản phẩm: ....  -->
+                            <div class="col-md-5">
+                                <div class="thongtinsanpham">
+                                    <ul>
+                                        <li>Thông số sản phẩm: <a href="#" class="tacgia"></a></li>
+                                        <li>CPU: <b>Intel Core I5 12400F</b></li>
+                                        <li>Main: <b>B660</b></li>
+                                        <li>RAM: 16GB</li>
+                                        <li>SSD 500GB</li>
+                                        <li>VGA: <b>RTX 3060</b></li>
+                                        <li>Nguồn: <b>650W</b></li>
+                                        <li>Tản nhiệt: <b>Khí</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="product-description col-md-9">
+                        <!-- 2 tab ở trên  -->
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active text-uppercase" id="nav-gioithieu-tab"
+                                    data-toggle="tab" href="#nav-gioithieu" role="tab" aria-controls="nav-gioithieu"
+                                    aria-selected="true">Giới thiệu</a>
+                                <a class="nav-item nav-link text-uppercase" id="nav-danhgia-tab" data-toggle="tab"
+                                    href="#nav-danhgia" role="tab" aria-controls="nav-danhgia"
+                                    aria-selected="false">Đánh giá của khách hàng</a>
+                            </div>
+                        </nav>
+                        <!-- nội dung của từng tab  -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active ml-3" id="nav-gioithieu" role="tabpanel"
+                                aria-labelledby="nav-gioithieu-tab">
+                                <h6 class="tieude font-weight-bold">ƯU ĐÃI KHI MUA THÊM SẢN PHẨM KHÁC</h6>
+                                <p>
+                                    <span>★ Mua kèm Màn hình giá sốc tại đây
+                                        </br>★ Mua kèm Tay Cầm Chơi Game giảm 50.000đ
+                                        </br>★ Mua thêm RAM giảm 50.000đ
+                                        </br>★ Mua Ổ cứng HDD giảm 30.000đ
+                                        </br>★ Giảm 10% tối đa 100.000đ khi mua Bàn & Ghế Gaming
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="tab-pane fade" id="nav-danhgia" role="tabpanel"
+                                aria-labelledby="nav-danhgia-tab">
+                                <div class="row">
+                                    <div class="col-md-3 text-center">
+                                        <p class="tieude">Đánh giá trung bình</p>
+                                        <div class="diem">0/5</div>
+                                        <div class="sao">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <p class="sonhanxet text-muted">(0 nhận xét)</p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="tiledanhgia text-center">
+                                            <div class="motthanh d-flex align-items-center">5 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">4 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">3 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">2 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="motthanh d-flex align-items-center">1 <i class="fa fa-star"></i>
+                                                <div class="progress mx-2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div> 0%
+                                            </div>
+                                            <div class="btn vietdanhgia mt-3">Viết đánh giá của bạn</div>
+                                        </div>
+                                        <!-- nội dung của form đánh giá  -->
+                                        <div class="formdanhgia">
+                                            <h6 class="tieude text-uppercase">GỬI ĐÁNH GIÁ CỦA BẠN</h6>
+                                            <span class="danhgiacuaban">Đánh giá của bạn về sản phẩm này:</span>
+                                            <div
+                                                class="rating d-flex flex-row-reverse align-items-center justify-content-end">
+                                                <input type="radio" name="star" id="star1"><label for="star1"></label>
+                                                <input type="radio" name="star" id="star2"><label for="star2"></label>
+                                                <input type="radio" name="star" id="star3"><label for="star3"></label>
+                                                <input type="radio" name="star" id="star4"><label for="star4"></label>
+                                                <input type="radio" name="star" id="star5"><label for="star5"></label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="txtFullname w-100"
+                                                    placeholder="Mời bạn nhập tên(Bắt buộc)">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="txtEmail w-100"
+                                                    placeholder="Mời bạn nhập email(Bắt buộc)">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="txtComment w-100"
+                                                    placeholder="Đánh giá của bạn về sản phẩm này">
+                                            </div>
+                                            <div class="btn nutguibl">Gửi bình luận</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- het tab nav-danhgia  -->
+                        </div>
+                        <!-- het tab-content  -->
+                    </div>
+                    <!-- het product-description -->
+                </div>
+                <!-- het row  -->
+            </div>
+            <!-- het product-detail -->
+        </div>
+        <!-- het container  -->
+    </section>
+    <!-- het product-page -->
+
+    <!-- khối sản phẩm tương tự -->
+    <section class="_1khoi sachmoi">
+        <div class="container">
+            <div class="noidung bg-white" style=" width: 100%;">
+                <div class="row">
+                    <!--header-->
+                    <div class="col-12 d-flex justify-content-between align-items-center pb-2 bg-light pt-4">
+                        <h5 class="header text-uppercase" style="font-weight: 400;">Sản phẩm tương tự</h5>
+                        <a href="sanphammoi.html" class="btn btn-warning btn-sm text-white">Xem tất cả</a>
+                    </div>
+                </div>
+                <div class="khoisanpham" style="padding-bottom: 2rem;">
+                    <!-- 1 sản phẩm -->
+                    <div class="card">
+                        <a href="pckhungvatva.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp1.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp3.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp3.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp7.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp6.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp5.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp4.png" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- khối sản phẩm đã xem  -->
+    <section class="_1khoi combohot mt-4">
+        <div class="container">
+            <div class="noidung bg-white" style=" width: 100%;">
+                <div class="row">
+                    <!--header-->
+                    <div class="col-12 d-flex justify-content-between align-items-center pb-2 bg-light pt-4">
+                        <h5 class="header text-uppercase" style="font-weight: 400;">Sản phẩm tương tự</h5>
+                        <a href="sanphammoi.html" class="btn btn-warning btn-sm text-white">Xem tất cả</a>
+                    </div>
+                </div>
+                <div class="khoisanpham" style="padding-bottom: 2rem;">
+                    <!-- 1 sản phẩm -->
+                    <div class="card">
+                        <a href="pckhungvatva.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp1.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp3.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp3.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp7.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp6.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp5.jpg" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pckhungvatva2.html" class="motsanpham" style="text-decoration: none; color: black;"
+                            data-toggle="tooltip" data-placement="bottom"
+                            title="PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB SSD/RTX 3050/550W)">
+                            <img class="card-img-top anh" src="images/sp4.png" alt="">
+                            <div class="card-body noidungsp mt-3">
+                                <h6 class="card-title ten">PC GAMING HACOM SHARK S27 (i5 12400F/B660/16GB RAM/500GB
+                                    SSD/RTX 3050/550W)</h6>
+                                <small class="tacgia text-muted">PC 01</small>
+                                <div class="gia d-flex align-items-baseline">
+                                    <div class="giamoi">24.399.000 ₫</div>
+                                    <div class="giacu text-muted">27.390.000 ₫</div>
+                                    <div class="sale">-20%</div>
+                                </div>
+                                <div class="danhgia">
+                                    <ul class="d-flex" style="list-style: none;">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><span class="text-muted">0 nhận xét</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- thanh cac dich vu :mien phi giao hang, qua tang mien phi ........ -->
+    <section class="abovefooter text-white" style="background-color: #CF111A;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-books.png" alt="icon-books">
+                        <div class="noidung">
+                            <h6 class="tieude font-weight-bold">CÓ RẤT NHIỀU PHỤ KIỆN ĐỘC ĐÁO</h6>
+                            <p class="detail">Tuyển chọn bởi Hacom</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-ship.png" alt="icon-ship">
+                        <div class="noidung">
+                            <h6 class="tieude font-weight-bold">MIỄN PHÍ GIAO HÀNG</h6>
+                            <p class="detail">Từ 150.000đ ở TP.HCM</p>
+                            <p class="detail">Từ 300.000đ ở tỉnh thành khác</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-gift.png" alt="icon-gift">
+                        <div class="noidung">
+                            <h6 class="tieude font-weight-bold">QUÀ TẶNG MIỄN PHÍ</h6>
+                            <p class="detail">Tặng phần mềm bản quyền</p>
+                            <p class="detail">Balo miễn phí</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/icon-return.png" alt="icon-return">
+                        <div class="noidung">
+                            <h6 class="tieude font-weight-bold">ĐỔI TRẢ NHANH CHÓNG</h6>
+                            <p class="detail">Hàng bị lỗi được đổi trả nhanh chóng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- het .abovefooter  -->
+
+    <!-- footer  -->
+    <footer>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="gioithieu">
+                        <h3 class="header text-uppercase font-weight-bold">Về Hacom</h3>
+                        <a href="#">Giới thiệu về Hacom</a>
+                        <a href="#">Tuyển dụng</a>
+                        <!-- <div class="fb-like" data-href="https://www.facebook.com/DealBook-110745443947730/"
+                            data-width="300px" data-layout="button" data-action="like" data-size="small"
+                            data-share="true"></div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="hotrokh">
+                        <h3 class="header text-uppercase font-weight-bold">HỖ TRỢ KHÁCH HÀNG</h3>
+                        <a href="#">Hướng dẫn đặt hàng</a>
+                        <a href="#">Phương thức thanh toán</a>
+                        <a href="#">Phương thức vận chuyển</a>
+                        <a href="#">Chính sách đổi trả</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="lienket">
+                        <h3 class="header text-uppercase font-weight-bold">HỢP TÁC VÀ LIÊN KẾT</h3>
+                        <img src="images/dang-ky-bo-cong-thuong.png" alt="dang-ky-bo-cong-thuong">
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="ptthanhtoan">
+                        <h3 class="header text-uppercase font-weight-bold">Phương thức thanh toán</h3>
+                        <img src="images/visa-payment.jpg" alt="visa-payment">
+                        <img src="images/master-card-payment.jpg" alt="master-card-payment">
+                        <img src="images/jcb-payment.jpg" alt="jcb-payment">
+                        <img src="images/atm-payment.jpg" alt="atm-payment">
+                        <img src="images/cod-payment.jpg" alt="cod-payment">
+                        <img src="images/payoo-payment.jpg" alt="payoo-payment">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- nut cuon len dau trang -->
+    <div class="fixed-bottom">
+        <div class="btn btn-warning float-right rounded-circle nutcuonlen" id="backtotop" href="#"
+            style="background:#CF111A;"><i class="fa fa-chevron-up text-white"></i></div>
+    </div>
+
+
+</body>
+
+</html>
